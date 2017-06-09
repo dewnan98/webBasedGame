@@ -6,6 +6,10 @@ var tetris;
 var level;
 var score = 0;
 var mapp;
+var buttonL;
+var buttonR;
+var buttonRot
+var buttonS;
 var sansation;
 var head;
 var c;
@@ -72,6 +76,34 @@ function setup ()
   button3 = new Buttons ((menu.lebar+menu.x)/2 , (menu.y+menu.tinggi)/1.5,80 ,50,c3,"HARD");
   createCanvas(lebar,tinggi);
 
+  buttonR = createButton("Kanan");
+  buttonL = createButton("Kiri");
+  buttonS = createButton ("Meluncur");
+  buttonRot = createButton ("Putar")
+
+  buttonL.position (20 , tinggi+20);
+  buttonR.position (lebar -100, tinggi+20);
+  buttonS.position (lebar/2 - 100, tinggi+20);
+  buttonRot.position(lebar/2 +buttonS.width-50, tinggi+20);
+
+  buttonL.size(100,100);
+  buttonR.size(100,100);
+  buttonS.size(100,100);
+  buttonRot.size(100,100);
+
+
+  buttonL.mousePressed(function() {
+    tetris.move("A");
+  });
+  buttonR.mousePressed(function() {
+    tetris.move("D");
+  });
+  buttonS.mousePressed(function() {
+    tetris.move("S");
+  });
+  buttonRot.mousePressed(function() {
+    tetris.move(" ");
+  });
  //pilihLevel();
 }
 
